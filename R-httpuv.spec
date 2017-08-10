@@ -4,7 +4,7 @@
 #
 Name     : R-httpuv
 Version  : 1.3.5
-Release  : 11
+Release  : 12
 URL      : https://cran.r-project.org/src/contrib/httpuv_1.3.5.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/httpuv_1.3.5.tar.gz
 Summary  : HTTP and WebSocket Server Library
@@ -16,13 +16,12 @@ BuildRequires : R-Rcpp
 BuildRequires : clr-R-helpers
 
 %description
-# httpuv: HTTP and WebSocket server library for R
-httpuv provides low-level socket and protocol support for handling
-HTTP and WebSocket requests directly from within R. It is primarily intended
-as a building block for other packages, rather than making it particularly
-easy to create complete web applications using httpuv alone. httpuv is built
-on top of the [libuv](https://github.com/joyent/libuv) and [http-parser](https://github.com/joyent/http-parser) C libraries, both of which were developed
-by Joyent, Inc.
+HTTP and WebSocket requests directly from within R. It is primarily
+    intended as a building block for other packages, rather than making it
+    particularly easy to create complete web applications using httpuv alone.
+    httpuv is built on top of the libuv and http-parser C libraries, both of
+    which were developed by Joyent, Inc. (See LICENSE file for libuv and
+    http-parser license information.)
 
 %package lib
 Summary: lib components for the R-httpuv package.
@@ -40,11 +39,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1499221831
+export SOURCE_DATE_EPOCH=1502406283
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1499221831
+export SOURCE_DATE_EPOCH=1502406283
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -62,11 +61,6 @@ echo "FFLAGS = $FFLAGS -march=haswell -ftree-vectorize " >> ~/.R/Makevars
 echo "CXXFLAGS = $CXXFLAGS -march=haswell -ftree-vectorize " >> ~/.R/Makevars
 R CMD INSTALL --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} --build  -l %{buildroot}/usr/lib64/R/library httpuv
 for i in `find %{buildroot}/usr/lib64/R/ -name "*.so"`; do mv $i $i.avx2 ; mv $i.avx2 ~/.stash/; done
-echo "CFLAGS = $CFLAGS -march=skylake-avx512 -ftree-vectorize " > ~/.R/Makevars
-echo "FFLAGS = $FFLAGS -march=skylake-avx512 -ftree-vectorize " >> ~/.R/Makevars
-echo "CXXFLAGS = $CXXFLAGS -march=skylake-avx512 -ftree-vectorize " >> ~/.R/Makevars
-R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} --build  -l %{buildroot}/usr/lib64/R/library httpuv
-for i in `find %{buildroot}/usr/lib64/R/ -name "*.so"`; do mv $i $i.avx512 ; mv $i.avx512 ~/.stash/; done
 echo "CFLAGS = $CFLAGS -ftree-vectorize " > ~/.R/Makevars
 echo "FFLAGS = $FFLAGS -ftree-vectorize " >> ~/.R/Makevars
 echo "CXXFLAGS = $CXXFLAGS -ftree-vectorize " >> ~/.R/Makevars
@@ -115,4 +109,3 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %defattr(-,root,root,-)
 /usr/lib64/R/library/httpuv/libs/httpuv.so
 /usr/lib64/R/library/httpuv/libs/httpuv.so.avx2
-/usr/lib64/R/library/httpuv/libs/httpuv.so.avx512
