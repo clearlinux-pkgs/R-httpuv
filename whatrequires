@@ -1,0 +1,12 @@
+# This file contains recursive sources that require this package
+R-TTR
+R-curl
+R-devtools
+R-httr
+R-quantmod
+R-rmarkdown
+R-roxygen2
+R-rversions
+R-shiny
+R-tseries
+apache-spark
