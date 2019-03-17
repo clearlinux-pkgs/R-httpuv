@@ -1,5 +1,6 @@
-1.4.5.1
+1.5.0
 R-BH
 R-Rcpp
+R-assertthat
 R-later
 R-promises
