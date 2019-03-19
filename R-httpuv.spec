@@ -4,21 +4,18 @@
 #
 Name     : R-httpuv
 Version  : 1.5.0
-Release  : 41
+Release  : 42
 URL      : https://cran.r-project.org/src/contrib/httpuv_1.5.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/httpuv_1.5.0.tar.gz
 Summary  : HTTP and WebSocket Server Library
 Group    : Development/Tools
 License  : CC-BY-4.0 GPL-2.0 GPL-2.0+ MIT NCSA
 Requires: R-httpuv-lib = %{version}-%{release}
-Requires: R-BH
-Requires: R-Rcpp
-Requires: R-assertthat
-Requires: R-later
-Requires: R-promises
+Requires: R-curl
 BuildRequires : R-BH
 BuildRequires : R-Rcpp
 BuildRequires : R-assertthat
+BuildRequires : R-curl
 BuildRequires : R-later
 BuildRequires : R-promises
 BuildRequires : buildreq-R
@@ -46,10 +43,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552793748
+export SOURCE_DATE_EPOCH=1552964286
 
 %install
-export SOURCE_DATE_EPOCH=1552793748
+export SOURCE_DATE_EPOCH=1552964286
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "

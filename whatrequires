@@ -1,4 +1,14 @@
 # This file contains recursive sources that require this package
+R-DT
+R-adegenet
 R-curl
+R-ggvis
+R-htmlwidgets
 R-httr
+R-miniUI
+R-rglwidget
 R-shiny
+R-shinyBS
+R-shinydashboard
+R-shinythemes
+R-threejs

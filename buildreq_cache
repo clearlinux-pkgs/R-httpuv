@@ -2,5 +2,6 @@
 R-BH
 R-Rcpp
 R-assertthat
+R-curl
 R-later
 R-promises
