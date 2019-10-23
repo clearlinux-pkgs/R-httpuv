@@ -1,9 +1,2 @@
 # This file contains recursive sources that require this package
-R-ggvis
-R-htmlwidgets
-R-httr
-R-miniUI
 R-shiny
-R-shinyBS
-R-shinydashboard
-R-shinythemes

@@ -4,32 +4,33 @@
 #
 Name     : R-httpuv
 Version  : 1.5.2
-Release  : 49
+Release  : 50
 URL      : https://cran.r-project.org/src/contrib/httpuv_1.5.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/httpuv_1.5.2.tar.gz
 Summary  : HTTP and WebSocket Server Library
 Group    : Development/Tools
 License  : CC-BY-4.0 GPL-2.0 GPL-2.0+ MIT NCSA
 Requires: R-httpuv-lib = %{version}-%{release}
-Requires: R-BH
 Requires: R-R6
 Requires: R-Rcpp
+Requires: R-curl
 Requires: R-later
 Requires: R-promises
 BuildRequires : R-BH
 BuildRequires : R-R6
 BuildRequires : R-Rcpp
+BuildRequires : R-curl
 BuildRequires : R-later
 BuildRequires : R-promises
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
-HTTP and WebSocket requests directly from within R. It is primarily
-    intended as a building block for other packages, rather than making it
-    particularly easy to create complete web applications using httpuv alone.
-    httpuv is built on top of the libuv and http-parser C libraries, both of
-    which were developed by Joyent, Inc. (See LICENSE file for libuv and
-    http-parser license information.)
+## Overview
+libuv is a multi-platform support library with a focus on asynchronous I/O. It
+was primarily developed for use by [Node.js][], but it's also
+used by [Luvit](http://luvit.io/), [Julia](http://julialang.org/),
+[pyuv](https://github.com/saghul/pyuv), and [others](https://github.com/libuv/libuv/wiki/Projects-that-use-libuv).
 
 %package lib
 Summary: lib components for the R-httpuv package.
@@ -47,10 +48,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1568745520
+export SOURCE_DATE_EPOCH=1571844536
 
 %install
-export SOURCE_DATE_EPOCH=1568745520
+export SOURCE_DATE_EPOCH=1571844536
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
