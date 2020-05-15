@@ -4,7 +4,7 @@
 #
 Name     : R-httpuv
 Version  : 1.5.2
-Release  : 54
+Release  : 55
 URL      : https://cran.r-project.org/src/contrib/httpuv_1.5.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/httpuv_1.5.2.tar.gz
 Summary  : HTTP and WebSocket Server Library
@@ -48,10 +48,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1589412638
+export SOURCE_DATE_EPOCH=1589585973
 
 %install
-export SOURCE_DATE_EPOCH=1589412638
+export SOURCE_DATE_EPOCH=1589585973
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
