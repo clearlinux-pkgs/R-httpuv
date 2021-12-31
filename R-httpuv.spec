@@ -4,7 +4,7 @@
 #
 Name     : R-httpuv
 Version  : 1.6.4
-Release  : 75
+Release  : 76
 URL      : https://cran.r-project.org/src/contrib/httpuv_1.6.4.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/httpuv_1.6.4.tar.gz
 Summary  : HTTP and WebSocket Server Library
