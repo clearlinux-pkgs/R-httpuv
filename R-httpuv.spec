@@ -4,7 +4,7 @@
 #
 Name     : R-httpuv
 Version  : 1.6.4
-Release  : 76
+Release  : 77
 URL      : https://cran.r-project.org/src/contrib/httpuv_1.6.4.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/httpuv_1.6.4.tar.gz
 Summary  : HTTP and WebSocket Server Library
@@ -47,10 +47,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1639503290
+export SOURCE_DATE_EPOCH=1641034254
 
 %install
-export SOURCE_DATE_EPOCH=1639503290
+export SOURCE_DATE_EPOCH=1641034254
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -137,3 +137,4 @@ R CMD check --no-manual --no-examples --no-codoc httpuv || :
 %defattr(-,root,root,-)
 /usr/lib64/R/library/httpuv/libs/httpuv.so
 /usr/lib64/R/library/httpuv/libs/httpuv.so.avx2
+/usr/lib64/R/library/httpuv/libs/httpuv.so.avx512
