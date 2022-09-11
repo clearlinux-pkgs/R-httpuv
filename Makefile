@@ -1,5 +1,5 @@
 PKG_NAME := R-httpuv
-URL = https://cran.r-project.org/src/contrib/httpuv_1.6.5.tar.gz
+URL = https://cran.r-project.org/src/contrib/httpuv_1.6.6.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
