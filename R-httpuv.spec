@@ -4,10 +4,10 @@
 # Using build pattern: R
 #
 Name     : R-httpuv
-Version  : 1.6.10
-Release  : 90
-URL      : https://cran.r-project.org/src/contrib/httpuv_1.6.10.tar.gz
-Source0  : https://cran.r-project.org/src/contrib/httpuv_1.6.10.tar.gz
+Version  : 1.6.11
+Release  : 91
+URL      : https://cran.r-project.org/src/contrib/httpuv_1.6.11.tar.gz
+Source0  : https://cran.r-project.org/src/contrib/httpuv_1.6.11.tar.gz
 Summary  : HTTP and WebSocket Server Library
 Group    : Development/Tools
 License  : CC-BY-4.0 GPL-2.0+ MIT
@@ -63,10 +63,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1683562472
+export SOURCE_DATE_EPOCH=1683815966
 
 %install
-export SOURCE_DATE_EPOCH=1683562472
+export SOURCE_DATE_EPOCH=1683815966
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/R-httpuv
 cp %{_builddir}/httpuv/src/http-parser/LICENSE-MIT %{buildroot}/usr/share/package-licenses/R-httpuv/1a00a507fb89bb0018c092d6835077d541e76dc2 || :
